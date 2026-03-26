@@ -42,6 +42,8 @@ export default function TekoKopiLandscapePOS() {
   const [orderNote, setOrderNote] = useState<string>("");
   const [isEditing, setIsEditing] = useState(false);
 
+  const [searchQuery, setSearchQuery] = useState("");
+
   // --- FULLSCREEN LOGIC ---
   const toggleFullscreen = () => {
     if (!document.fullscreenElement) {
@@ -120,6 +122,11 @@ export default function TekoKopiLandscapePOS() {
 
   const totalBill = cart.reduce((sum, item) => sum + (item.unitPrice * item.quantity), 0);
 
+  const filteredProducts = products.filter(p =>
+    (activeCategory === "All" || p.category === activeCategory) &&
+    p.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <div className="flex h-[100dvh] w-full bg-slate-50 overflow-hidden font-sans text-slate-900 pl-[env(safe-area-inset-left)] pr-[env(safe-area-inset-right)] pb-[env(safe-area-inset-bottom)]">
       
@@ -156,7 +163,7 @@ export default function TekoKopiLandscapePOS() {
             <div className="flex-1 max-w-md relative">
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-300" size={18} />
               {/* Focus ring dirubah */}
-              <input type="text" placeholder="Cari menu..." className="w-full pl-10 pr-4 py-3 bg-white rounded-xl border-none shadow-sm outline-none text-sm focus:ring-2 focus:ring-[#4D3C2A]/20" />
+              <input type="text"value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} placeholder="Cari menu..." className="w-full pl-10 pr-4 py-3 bg-white rounded-xl border-none shadow-sm outline-none text-sm focus:ring-2 focus:ring-[#4D3C2A]/20" />
             </div>
             {/* Hover dirubah */}
             <button onClick={toggleFullscreen} className="p-3 bg-white border border-slate-100 text-slate-400 rounded-xl shadow-sm hover:text-[#4D3C2A] hover:border-[#4D3C2A]/10 transition-colors">
@@ -180,21 +187,37 @@ export default function TekoKopiLandscapePOS() {
 
         <div className="flex-1 overflow-y-auto p-4 lg:p-6 pt-0">
           <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
-            {products.filter(p => activeCategory === "All" || p.category === activeCategory).map((p) => {
-              const displayPrice = typeof p.prices === 'number' ? p.prices : p.prices.Small;
-              return (
-                <div key={p.id} className="bg-white p-3 rounded-[32px] shadow-sm border border-slate-50 flex flex-col hover:shadow-lg transition-shadow">
-                  <div className="aspect-square rounded-2xl mb-3 flex items-center justify-center bg-gradient-to-br from-[#4D3C2A]/10 to-[#4D3C2A]/5">
-                      <Coffee size={40} className="text-[#4D3C2A]" />
-                  </div>
-                  <h3 className="font-bold text-slate-800 text-sm mb-1 truncate px-1">{p.name}</h3>
-                  {/* Harga Teks Cokelat Tua */}
-                  <p className="text-[#4D3C2A] font-black text-xs mb-3 px-1">Rp {displayPrice.toLocaleString()}</p>
-                  {/* Tombol TAMBAH Cokelat Tua (Variant Terang) */}
-                  <button onClick={() => openModal(p)} className="w-full py-3 rounded-xl font-black text-[10px] bg-[#4D3C2A]/5 text-[#4D3C2A] border border-[#4D3C2A]/10 hover:bg-[#4D3C2A] hover:text-white transition-all active:scale-95 mt-auto">+ TAMBAH</button>
+              {filteredProducts.length === 0 ? (
+                <div className="col-span-full text-center text-slate-400">
+                  Menu tidak ditemukan
                 </div>
-              );
-            })}
+              ) : (
+                filteredProducts.map(p => {
+                  const price = typeof p.prices === 'number' ? p.prices : p.prices.Small;
+
+                  return (
+                    <div key={p.id} className="bg-white p-4 rounded-3xl flex flex-col shadow">
+
+                      {/* TANPA GAMBAR */}
+                      <div className="aspect-square flex items-center justify-center bg-[#4D3C2A]/10 rounded-2xl mb-3">
+                        <Coffee size={40} className="text-[#4D3C2A]" />
+                      </div>
+
+                      <h3 className="font-bold text-sm">{p.name}</h3>
+                      <p className="text-[#4D3C2A] font-black text-xs mb-3">
+                        Rp {price.toLocaleString()}
+                      </p>
+
+                      <button
+                        onClick={() => openModal(p)}
+                        className="mt-auto py-2 bg-[#4D3C2A]/10 text-[#4D3C2A] rounded-xl"
+                      >
+                        + TAMBAH
+                      </button>
+                    </div>
+                  );
+                })
+              )}
           </div>
         </div>
       </main>
