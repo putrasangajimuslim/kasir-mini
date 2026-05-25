@@ -7,25 +7,94 @@ import {
   Maximize, Minimize, Droplets, IceCream, StickyNote, Share2, Download, CheckCircle2
 } from 'lucide-react';
 
-// --- DATA PRODUK ---
+// --- DATA PRODUK LENGKAP SESUAI GAMBAR MENU ZIPTEA ---
 const products = [
-  { id: 1, name: "Milk Tea", category: "Thai Series", image: "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?q=80&w=400&h=400&fit=crop", prices: { Small: 8000, Big: 12000 } },
-  { id: 2, name: "Matcha", category: "Thai Series", image: "https://images.unsplash.com/photo-1515823064-d6e0c04616a7?q=80&w=400&h=400&fit=crop", prices: { Small: 9000, Big: 13000 } },
-  { id: 3, name: "Green Tea", category: "Thai Series", image: "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?q=80&w=400&h=400&fit=crop", prices: { Small: 9000, Big: 13000 } },
-  { id: 4, name: "Milo GreenTea", category: "Thai Series", image: "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?q=80&w=400&h=400&fit=crop", prices: { Small: 12000, Big: 17000 } },
-  { id: 5, name: "Choco Dark", category: "Official Chocolate", image: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=400&h=400&fit=crop", prices: { Small: 14000, Big: 14000 } },
-  { id: 6, name: "Mango Yakult", category: "Yakult Series", image: "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?q=80&w=400&h=400&fit=crop", prices: 15000 },
+  // COFFEE SERIES
+  { id: 1, name: "Cappucino", category: "Coffee Series", prices: { Small: 10000, Big: 14000 } },
+  { id: 2, name: "Coffee Caramel", category: "Coffee Series", prices: { Small: 10000, Big: 14000 } },
+  { id: 3, name: "Vanilla Latte", category: "Coffee Series", prices: { Small: 10000, Big: 14000 } },
+
+  // TEA SERIES (Kolom Kiri - Ukuran R & L)
+  { id: 4, name: "Milk Tea", category: "Tea Series", prices: { Small: 10000, Big: 14000 } },
+  { id: 5, name: "Matcha", category: "Tea Series", prices: { Small: 11000, Big: 15000 } },
+  { id: 6, name: "Green Tea", category: "Tea Series", prices: { Small: 11000, Big: 15000 } },
+  { id: 7, name: "Milo GreenTea", category: "Tea Series", prices: { Small: 14000, Big: 19000 } },
+  { id: 8, name: "Choco GreenTea", category: "Tea Series", prices: { Small: 14000, Big: 19000 } },
+  { id: 9, name: "Thai Tea", category: "Tea Series", prices: { Small: 10000, Big: 14000 } },
+  { id: 10, name: "Milo Thai Tea", category: "Tea Series", prices: { Small: 13000, Big: 18000 } },
+  { id: 11, name: "Choco Thai Tea", category: "Tea Series", prices: { Small: 13000, Big: 18000 } },
+
+  // TEA SERIES (Kolom Kanan - Flat Price / Satu Ukuran)
+  { id: 12, name: "Teh Original", category: "Tea Series", prices: 5000 },
+  { id: 13, name: "Teh Susu", category: "Tea Series", prices: 7000 },
+  { id: 14, name: "Teh Fruit Punch", category: "Tea Series", prices: 7000 },
+  { id: 15, name: "Teh Mangga", category: "Tea Series", prices: 7000 },
+  { id: 16, name: "Teh Guava", category: "Tea Series", prices: 7000 },
+  { id: 17, name: "Teh Jeruk", category: "Tea Series", prices: 7000 },
+  { id: 18, name: "Peach Tea", category: "Tea Series", prices: 7000 },
+  { id: 19, name: "Blackcurrant Tea", category: "Tea Series", prices: 7000 },
+  { id: 20, name: "Apel Tea", category: "Tea Series", prices: 7000 },
+  { id: 21, name: "Lychee Tea", category: "Tea Series", prices: 7000 },
+  { id: 22, name: "Strawberry Tea", category: "Tea Series", prices: 7000 },
+  { id: 23, name: "Jasmine Tea", category: "Tea Series", prices: 7000 },
+  { id: 24, name: "Lemon Tea", category: "Tea Series", prices: 10000 },
+
+  // CHOCOLATE SERIES
+  { id: 25, name: "Choco Dark", category: "Chocolate Series", prices: { Small: 10000, Big: 14000 } },
+  { id: 26, name: "Choco Almond", category: "Chocolate Series", prices: { Small: 10000, Big: 14000 } },
+  { id: 27, name: "Choco Caramel", category: "Chocolate Series", prices: { Small: 10000, Big: 14000 } },
+  { id: 28, name: "Choco Milo", category: "Chocolate Series", prices: { Small: 10000, Big: 14000 } },
+  { id: 29, name: "Choco Oreo", category: "Chocolate Series", prices: { Small: 10000, Big: 14000 } },
+  { id: 30, name: "Choco Royal", category: "Chocolate Series", prices: { Small: 10000, Big: 14000 } },
+  { id: 31, name: "Choco Hazelnut", category: "Chocolate Series", prices: { Small: 10000, Big: 14000 } },
+  { id: 32, name: "Choco Cheese", category: "Chocolate Series", prices: { Small: 10000, Big: 14000 } },
+  { id: 33, name: "Choco Tiramisu", category: "Chocolate Series", prices: { Small: 10000, Big: 14000 } },
+
+  // YAKULT SERIES
+  { id: 34, name: "Mango Yakult", category: "Yakult Series", prices: 17000 },
+  { id: 35, name: "Lychee Yakult", category: "Yakult Series", prices: 17000 },
+  { id: 36, name: "Peach Yakult", category: "Yakult Series", prices: 17000 },
+  { id: 37, name: "Strawberry Yakult", category: "Yakult Series", prices: 17000 },
+
+  // FRESH MILK BROWN SUGAR
+  { id: 38, name: "Fresh Milk Brown Sugar", category: "Fresh Milk Brown Sugar", prices: { Small: 13000, Big: 17000 } },
+
+  // SMOOTHIES SERIES
+  { id: 39, name: "Taro Smoothies", category: "Smoothies Series", prices: { Small: 10000, Big: 14000 } },
+  { id: 40, name: "Vanilla Smoothies", category: "Smoothies Series", prices: { Small: 10000, Big: 14000 } },
+  { id: 41, name: "Redvelvet Smoothies", category: "Smoothies Series", prices: { Small: 10000, Big: 14000 } },
+  { id: 42, name: "Bubblegum Smoothies", category: "Smoothies Series", prices: { Small: 10000, Big: 14000 } },
+
+  // SODA SERIES
+  { id: 43, name: "Orange Blue Ocean", category: "Soda Series", prices: 13000 },
+  { id: 44, name: "Red Blue Ocean", category: "Soda Series", prices: 13000 },
+  { id: 45, name: "Strawberry Mojito", category: "Soda Series", prices: 10000 },
+  { id: 46, name: "Blue Ocean", category: "Soda Series", prices: 10000 },
+  { id: 47, name: "Apple Mojito", category: "Soda Series", prices: 10000 },
+  { id: 48, name: "Melon Mojito", category: "Soda Series", prices: 10000 },
 ];
 
+// --- DATA TOPPING ---
 const toppingsData = [
-  { name: "Boba", price: 2000 },
-  { name: "Oreo", price: 2000 },
-  { name: "Creamcheese", price: 4000 },
+  { name: "Popping Boba", price: 5000 },
+  { name: "Coconut Jelly", price: 3000 },
+  { name: "Cream Cheese", price: 5000 },
+  { name: "Oreo", price: 3000 },
+  { name: "Boba", price: 3000 },
 ];
 
-const categories = ["All", "Thai Series", "Yakult Series", "Official Chocolate"];
+const categories = [
+  "All", 
+  "Coffee Series", 
+  "Tea Series", 
+  "Chocolate Series", 
+  "Yakult Series", 
+  "Fresh Milk Brown Sugar", 
+  "Smoothies Series", 
+  "Soda Series"
+];
 
-export default function TekoKopiLandscapePOS() {
+export default function ZipteaLandscapePOS() {
   const [cart, setCart] = useState<any[]>([]);
   const [activeCategory, setActiveCategory] = useState("All");
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -54,7 +123,7 @@ export default function TekoKopiLandscapePOS() {
   const toggleFullscreen = () => {
     if (!document.fullscreenElement) {
       document.documentElement.requestFullscreen().catch(() => {
-        alert("Gunakan 'Add to Home Screen' di iPhone untuk Fullscreen murni.");
+        alert("Gunakan Mode Lanskap atau 'Add to Home Screen' untuk visual terbaik.");
       });
     } else {
       document.exitFullscreen?.();
@@ -104,7 +173,7 @@ export default function TekoKopiLandscapePOS() {
       ...selectedProduct,
       orderId: isEditing ? selectedProduct.orderId : Date.now(),
       quantity: customQty,
-      size: selectedSize,
+      size: hasMultipleSizes(selectedProduct) ? selectedSize : "Regular",
       sugar: selectedSugar,
       ice: selectedIce,
       toppings: selectedToppings,
@@ -173,14 +242,31 @@ export default function TekoKopiLandscapePOS() {
 
   // --- RE-ROUTING KE API BACKEND UNTUK UNDUH FILE PDF ---
   const handleDownloadPDF = async () => {
-     alert("Gagal memproses file PDF di server.");
+    if (!completedOrderData) return;
+
+    try {
+      const response = await fetch('/api/save-pdf', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(completedOrderData),
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        window.open(result.url, '_blank');
+      } else {
+        alert("Gagal memproses file PDF di server.");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Terjadi masalah sistem saat memproses berkas PDF.");
+    }
   };
 
-  // --- BAGIKAN DATA STRUK LANGSUNG KE WHATSAPP (REAL LIVE ACTION) ---
+  // --- BAGIKAN DATA STRUK LANGSUNG KE WHATSAPP ---
   const handleShareWhatsApp = () => {
     if (!completedOrderData) return;
 
-    // Skenario pembuatan template teks rapi ala WhatsApp Markdown
     let textMessage = `*STRUK PEMBELIAN ZIPTEA*\n`;
     textMessage += `=========================\n`;
     textMessage += `*No. Nota:* ${completedOrderData.receiptNo}\n`;
@@ -210,13 +296,8 @@ export default function TekoKopiLandscapePOS() {
     textMessage += `=========================\n`;
     textMessage += `_Terima kasih atas kunjungan Anda!_`;
 
-    // Encode teks agar kompatibel dengan URL Web Browser & Handphone
     const encodedText = encodeURIComponent(textMessage);
-    
-    // Gunakan open API resmi WhatsApp click-to-chat
     const whatsappUrl = `https://api.whatsapp.com/send?text=${encodedText}`;
-    
-    // Eksekusi buka tab baru mengarah ke aplikasi WA
     window.open(whatsappUrl, '_blank');
   };
 
@@ -236,11 +317,11 @@ export default function TekoKopiLandscapePOS() {
       <aside className={`fixed lg:static inset-y-0 left-0 w-64 bg-white z-[110] transition-transform duration-300 border-r border-slate-100 flex flex-col ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}`}>
         <div className="p-6 flex flex-col h-full">
           <div className="flex items-center justify-between mb-8">
-            <h1 className="font-black text-xl text-[#4D3C2A] tracking-tighter">Kasir Mini</h1>
+            <h1 className="font-black text-xl text-[#4D3C2A] tracking-tighter">Ziptea POS</h1>
             <button onClick={() => setIsSidebarOpen(false)} className="lg:hidden p-2 text-slate-400 bg-slate-50 rounded-full"><X size={20}/></button>
           </div>
-          <nav className="flex-1 space-y-1">
-            <button onClick={() => setActiveCategory("All")} className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl font-bold text-sm transition-all ${activeCategory === "All" ? 'bg-[#4D3C2A] text-white shadow-md' : 'text-slate-400 hover:bg-slate-50'}`}>
+          <nav className="flex-1 space-y-1 overflow-y-auto scrollbar-hide">
+            <button onClick={() => { setActiveCategory("All"); setIsSidebarOpen(false); }} className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl font-bold text-sm transition-all ${activeCategory === "All" ? 'bg-[#4D3C2A] text-white shadow-md' : 'text-slate-400 hover:bg-slate-50'}`}>
               <LayoutDashboard size={18}/> Menu Utama
             </button>
             <button className="w-full flex items-center gap-3 px-4 py-3 rounded-xl font-bold text-sm text-slate-400 hover:bg-slate-50 transition-all">
@@ -272,7 +353,7 @@ export default function TekoKopiLandscapePOS() {
           </div>
           <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-hide">
             {categories.map((cat) => (
-              <button key={cat} onClick={() => setActiveCategory(cat)} className={`px-5 py-2 rounded-xl text-xs font-black transition-all border-2 ${activeCategory === cat ? 'bg-[#4D3C2A] border-[#4D3C2A] text-white shadow-md' : 'bg-white text-slate-400 border-white hover:border-slate-100'}`}>
+              <button key={cat} onClick={() => setActiveCategory(cat)} className={`whitespace-nowrap px-4 py-2 rounded-xl text-xs font-black transition-all border-2 ${activeCategory === cat ? 'bg-[#4D3C2A] border-[#4D3C2A] text-white shadow-md' : 'bg-white text-slate-400 border-white hover:border-slate-100'}`}>
                 {cat}
               </button>
             ))}
@@ -282,25 +363,26 @@ export default function TekoKopiLandscapePOS() {
         <div className="flex-1 overflow-y-auto p-4 lg:p-6 pt-0">
           <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
               {filteredProducts.length === 0 ? (
-                <div className="col-span-full text-center text-slate-400">
+                <div className="col-span-full text-center text-slate-400 py-12">
                   Menu tidak ditemukan
                 </div>
               ) : (
                 filteredProducts.map(p => {
-                  const price = typeof p.prices === 'number' ? p.prices : p.prices.Small;
+                  const hasSizes = typeof p.prices === 'object';
+                  const displayPrice = hasSizes ? (p.prices as any).Small : p.prices;
 
                   return (
-                    <div key={p.id} className="bg-white p-4 rounded-3xl flex flex-col shadow">
-                      <div className="aspect-square flex items-center justify-center bg-[#4D3C2A]/10 rounded-2xl mb-3">
-                        <Coffee size={40} className="text-[#4D3C2A]" />
+                    <div key={p.id} className="bg-white p-4 rounded-3xl flex flex-col shadow-sm border border-slate-100">
+                      <div className="aspect-square flex items-center justify-center bg-[#4D3C2A]/5 rounded-2xl mb-3">
+                        <Coffee size={36} className="text-[#4D3C2A]" />
                       </div>
-                      <h3 className="font-bold text-sm">{p.name}</h3>
+                      <h3 className="font-bold text-xs text-slate-800 line-clamp-2 h-8 mb-1">{p.name}</h3>
                       <p className="text-[#4D3C2A] font-black text-xs mb-3">
-                        Rp {price.toLocaleString()}
+                        Rp {displayPrice.toLocaleString()} {hasSizes && <span className="text-[10px] text-slate-400 font-normal">(R)</span>}
                       </p>
                       <button
                         onClick={() => openModal(p)}
-                        className="mt-auto py-2 bg-[#4D3C2A]/10 text-[#4D3C2A] rounded-xl"
+                        className="mt-auto py-2 bg-[#4D3C2A]/10 text-[#4D3C2A] rounded-xl font-bold text-xs hover:bg-[#4D3C2A] hover:text-white transition-all"
                       >
                         + TAMBAH
                       </button>
@@ -314,8 +396,6 @@ export default function TekoKopiLandscapePOS() {
 
       {/* --- SIDEBAR ORDER DETAIL (KANAN) --- */}
       <aside className={`fixed lg:static inset-y-0 right-0 w-full sm:w-80 lg:w-96 bg-white border-l border-slate-100 z-[120] transition-transform duration-300 flex flex-col h-full ${isCartOpen ? 'translate-x-0' : 'translate-x-full lg:translate-x-0'}`}>
-        
-        {/* AREA ATAS */}
         <div className="flex-1 flex flex-col overflow-hidden pt-[max(0.5rem,env(safe-area-inset-top))]">
           <div className="p-4 flex justify-between items-center border-b flex-none">
             <h2 className="font-black text-lg text-slate-800">Detail Pesanan</h2>
@@ -339,7 +419,7 @@ export default function TekoKopiLandscapePOS() {
                         <span className="px-1 py-0.5 bg-slate-50 text-blue-500 text-[8px] font-black rounded border border-blue-50 uppercase">{item.sugar} Sugar</span>
                         <span className="px-1 py-0.5 bg-slate-50 text-cyan-600 text-[8px] font-black rounded border border-cyan-50 uppercase">{item.ice} Ice</span>
                         {item.toppings.map((t: string) => (
-                          <span key={t} className="px-1 py-0.5 bg-slate-50 text-slate-500 text-[8px] font-bold rounded border border-slate-100 uppercase truncate max-w-[60px]">+ {t}</span>
+                          <span key={t} className="px-1 py-0.5 bg-slate-50 text-slate-500 text-[8px] font-bold rounded border border-slate-100 uppercase truncate max-w-[80px]">+ {t}</span>
                         ))}
                       </div>
                       {item.note && <p className="text-[9px] text-slate-400 mt-0.5 font-medium italic truncate">Note: {item.note}</p>}
@@ -362,29 +442,12 @@ export default function TekoKopiLandscapePOS() {
           </div>
         </div>
 
-        {/* AREA BAWAH (STAY AT BOTTOM) */}
         <div className="flex-none p-4 bg-white border-t border-dashed border-slate-200 shadow-[0_-4px_20px_rgba(0,0,0,0.03)] pb-[max(1rem,env(safe-area-inset-bottom))] space-y-3.5">
-          
           <div>
             <label className="block text-[10px] font-black text-slate-400 uppercase mb-1.5 tracking-wider">Metode Pembayaran</label>
             <div className="grid grid-cols-2 gap-2 bg-slate-100 p-1 rounded-[10px]">
-              <button 
-                type="button"
-                onClick={() => setPaymentMethod('CASH')}
-                className={`py-1.5 text-xs font-black rounded-[8px] transition-all ${paymentMethod === 'CASH' ? 'bg-[#4D3C2A] text-white shadow-sm' : 'text-slate-600 hover:text-slate-800'}`}
-              >
-                CASH
-              </button>
-              <button 
-                type="button"
-                onClick={() => {
-                  setPaymentMethod('QRIS');
-                  setCashReceived('');
-                }}
-                className={`py-1.5 text-xs font-black rounded-[8px] transition-all ${paymentMethod === 'QRIS' ? 'bg-[#4D3C2A] text-white shadow-sm' : 'text-slate-600 hover:text-slate-800'}`}
-              >
-                QRIS
-              </button>
+              <button type="button" onClick={() => setPaymentMethod('CASH')} className={`py-1.5 text-xs font-black rounded-[8px] transition-all ${paymentMethod === 'CASH' ? 'bg-[#4D3C2A] text-white shadow-sm' : 'text-slate-600 hover:text-slate-800'}`}>CASH</button>
+              <button type="button" onClick={() => { setPaymentMethod('QRIS'); setCashReceived(''); }} className={`py-1.5 text-xs font-black rounded-[8px] transition-all ${paymentMethod === 'QRIS' ? 'bg-[#4D3C2A] text-white shadow-sm' : 'text-slate-600 hover:text-slate-800'}`}>QRIS</button>
             </div>
           </div>
 
@@ -392,25 +455,11 @@ export default function TekoKopiLandscapePOS() {
             <div className="space-y-1.5 animate-in fade-in duration-200">
               <div>
                 <label className="block text-[10px] font-black text-slate-400 uppercase mb-1 tracking-wider">Uang Diterima (Rp)</label>
-                <input 
-                  type="number" 
-                  placeholder="Masukkan nominal..."
-                  value={cashReceived}
-                  onChange={(e) => setCashReceived(e.target.value === '' ? '' : Number(e.target.value))}
-                  className="w-full px-3 py-1.5 bg-slate-50 border border-slate-200 rounded-[10px] text-xs font-bold text-slate-800 focus:outline-none focus:border-[#4D3C2A] transition-colors"
-                />
+                <input type="number" placeholder="Masukkan nominal..." value={cashReceived} onChange={(e) => setCashReceived(e.target.value === '' ? '' : Number(e.target.value))} className="w-full px-3 py-1.5 bg-slate-50 border border-slate-200 rounded-[10px] text-xs font-bold text-slate-800 focus:outline-none focus:border-[#4D3C2A] transition-colors" />
               </div>
-
               <div className="grid grid-cols-4 gap-1.5">
                 {quickCashOptions.map((amount) => (
-                  <button
-                    key={amount}
-                    type="button"
-                    onClick={() => setCashReceived(amount)}
-                    className={`py-1 border text-[10px] font-black rounded-[10px] transition-all ${cashReceived === amount ? 'border-[#4D3C2A] bg-[#4D3C2A]/5 text-[#4D3C2A]' : 'border-slate-200 bg-white text-slate-600 hover:bg-slate-50'}`}
-                  >
-                    {amount / 1000}k
-                  </button>
+                  <button key={amount} type="button" onClick={() => setCashReceived(amount)} className={`py-1 border text-[10px] font-black rounded-[10px] transition-all ${cashReceived === amount ? 'border-[#4D3C2A] bg-[#4D3C2A]/5 text-[#4D3C2A]' : 'border-slate-200 bg-white text-slate-600 hover:bg-slate-50'}`}>{amount / 1000}k</button>
                 ))}
               </div>
             </div>
@@ -425,36 +474,18 @@ export default function TekoKopiLandscapePOS() {
               <span className="font-black text-slate-800">TOTAL BAYAR</span>
               <span className="font-black text-lg text-[#4D3C2A]">Rp {totalBill.toLocaleString()}</span>
             </div>
-
             {paymentMethod === 'CASH' && (
               <div className="flex justify-between items-center border-t border-slate-100 pt-1.5">
                 <span className="font-black text-slate-400 text-[10px] uppercase">Kembalian</span>
-                <span className={`font-black text-sm ${changeAmount > 0 ? 'text-green-600' : 'text-slate-400'}`}>
-                  Rp {changeAmount.toLocaleString()}
-                </span>
+                <span className={`font-black text-sm ${changeAmount > 0 ? 'text-green-600' : 'text-slate-400'}`}>Rp {changeAmount.toLocaleString()}</span>
               </div>
             )}
           </div>
 
           <div className="flex gap-2.5 pt-0.5">
-            <button 
-              type="button"
-              onClick={resetPaymentAndCart}
-              className="w-1/4 py-3 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-[16px] font-black text-xs transition-all active:scale-95 uppercase tracking-wider text-center"
-            >
-              Batal
-            </button>
-            
-            <button 
-              type="button"
-              onClick={handleConfirmPayment}
-              className="flex-1 py-3 bg-[#4D3C2A] text-white rounded-[16px] font-black text-xs shadow-lg shadow-[#4D3C2A]/10 hover:bg-[#4D3C2A]/90 transition-all active:scale-95 disabled:bg-slate-100 disabled:text-slate-300 disabled:shadow-none uppercase tracking-widest" 
-              disabled={!isPaymentValid()}
-            >
-              Konfirmasi Pesanan
-            </button>
+            <button type="button" onClick={resetPaymentAndCart} className="w-1/4 py-3 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-[16px] font-black text-xs transition-all active:scale-95 uppercase tracking-wider text-center">Batal</button>
+            <button type="button" onClick={handleConfirmPayment} className="flex-1 py-3 bg-[#4D3C2A] text-white rounded-[16px] font-black text-xs shadow-lg shadow-[#4D3C2A]/10 hover:bg-[#4D3C2A]/90 transition-all active:scale-95 disabled:bg-slate-100 disabled:text-slate-300 disabled:shadow-none uppercase tracking-widest" disabled={!isPaymentValid()}>Konfirmasi Pesanan</button>
           </div>
-
         </div>
       </aside>
 
@@ -476,7 +507,7 @@ export default function TekoKopiLandscapePOS() {
                   <label className="block font-black text-slate-400 text-[9px] mb-3 uppercase tracking-widest">Ukuran Gelas</label>
                   <div className="grid grid-cols-2 gap-3">
                     {["Small", "Big"].map((size) => (
-                      <button key={size} onClick={() => setSelectedSize(size)} className={`py-3 rounded-xl font-black text-xs border-2 transition-all ${selectedSize === size ? 'border-[#4D3C2A] bg-[#4D3C2A]/5 text-[#4D3C2A]' : 'border-slate-50 text-slate-400 hover:border-slate-100'}`}>{size}</button>
+                      <button key={size} onClick={() => setSelectedSize(size)} className={`py-3 rounded-xl font-black text-xs border-2 transition-all ${selectedSize === size ? 'border-[#4D3C2A] bg-[#4D3C2A]/5 text-[#4D3C2A]' : 'border-slate-50 text-slate-400 hover:border-slate-100'}`}>{size === "Small" ? "Small (R)" : "Big (L)"}</button>
                     ))}
                   </div>
                 </section>
@@ -518,12 +549,7 @@ export default function TekoKopiLandscapePOS() {
 
               <section>
                 <label className="flex items-center gap-1 font-black text-slate-400 text-[9px] mb-3 uppercase tracking-widest"><StickyNote size={10}/> Catatan Tambahan</label>
-                <textarea 
-                  value={orderNote} 
-                  onChange={(e) => setOrderNote(e.target.value)}
-                  placeholder="Contoh: Sedotan dikurangi, jangan pakai plastik..."
-                  className="w-full p-4 bg-slate-50 border-2 border-slate-100 rounded-2xl text-xs outline-none focus:border-[#4D3C2A]/30 min-h-[80px] resize-none transition-colors"
-                />
+                <textarea value={orderNote} onChange={(e) => setOrderNote(e.target.value)} placeholder="Contoh: Sedotan dikurangi, jangan pakai plastik..." className="w-full p-4 bg-slate-50 border-2 border-slate-100 rounded-2xl text-xs outline-none focus:border-[#4D3C2A]/30 min-h-[80px] resize-none transition-colors" />
               </section>
             </div>
 
@@ -538,10 +564,8 @@ export default function TekoKopiLandscapePOS() {
       {isReceiptModalOpen && completedOrderData && (
         <div className="fixed inset-0 z-[300] bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in duration-200">
           <div className="bg-white w-full max-w-sm rounded-[32px] p-6 flex flex-col max-h-[95vh] shadow-2xl animate-in zoom-in-95 duration-300 overflow-hidden">
-            
-            {/* Bagian Atas */}
             <div className="flex flex-col items-center text-center mt-2 flex-none">
-              <div className="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center text-green-500 mb-3 animate-bounce">
+              <div className="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center text-green-500 mb-3">
                 <CheckCircle2 size={44} strokeWidth={2.5} />
               </div>
               <h3 className="text-xl font-black text-slate-800 tracking-tight">Transaksi Berhasil</h3>
@@ -549,10 +573,8 @@ export default function TekoKopiLandscapePOS() {
               <p className="text-[10px] text-slate-400 font-medium mt-1">{completedOrderData.date} • {completedOrderData.receiptNo}</p>
             </div>
 
-            {/* Bagian Tengah */}
             <div className="flex-1 overflow-y-auto my-4 p-4 bg-slate-50 rounded-2xl border border-dashed border-slate-200 space-y-3 text-xs scrollbar-hide">
               <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider pb-1 border-b border-slate-200">Rincian Item</div>
-              
               {completedOrderData.items.map((item: any, idx: number) => (
                 <div key={idx} className="space-y-0.5">
                   <div className="flex justify-between font-black text-slate-800">
@@ -560,7 +582,7 @@ export default function TekoKopiLandscapePOS() {
                     <span>Rp {(item.unitPrice * item.quantity).toLocaleString()}</span>
                   </div>
                   <div className="text-[9px] text-slate-400 font-medium pl-1">
-                    {item.size} • {item.sugar} Sugar • {item.ice} Ice
+                    {item.size === "Regular" ? "One Size" : item.size} • {item.sugar} Sugar • {item.ice} Ice
                     {item.toppings.length > 0 && ` • Topping: ${item.toppings.join(', ')}`}
                   </div>
                 </div>
@@ -588,34 +610,17 @@ export default function TekoKopiLandscapePOS() {
               </div>
             </div>
 
-            {/* Bagian Bawah (Fungsi WhatsApp & PDF Aktif) */}
             <div className="space-y-2 flex-none mt-2">
               <div className="grid grid-cols-2 gap-2">
-                <button 
-                  type="button" 
-                  onClick={handleShareWhatsApp}
-                  className="py-2.5 px-3 bg-green-50 hover:bg-green-100 text-green-600 font-black text-xs rounded-xl flex items-center justify-center gap-1.5 transition-all"
-                >
+                <button type="button" onClick={handleShareWhatsApp} className="py-2.5 px-3 bg-green-50 hover:bg-green-100 text-green-600 font-black text-xs rounded-xl flex items-center justify-center gap-1.5 transition-all">
                   <Share2 size={14}/> Share WA
                 </button>
-                <button 
-                  type="button" 
-                  onClick={handleDownloadPDF}
-                  className="py-2.5 px-3 bg-[#4D3C2A]/10 hover:bg-[#4D3C2A]/20 text-[#4D3C2A] font-black text-xs rounded-xl flex items-center justify-center gap-1.5 transition-all"
-                >
+                <button type="button" onClick={handleDownloadPDF} className="py-2.5 px-3 bg-[#4D3C2A]/10 hover:bg-[#4D3C2A]/20 text-[#4D3C2A] font-black text-xs rounded-xl flex items-center justify-center gap-1.5 transition-all">
                   <Download size={14}/> Unduh PDF
                 </button>
               </div>
-
-              <button 
-                type="button" 
-                onClick={handleNewTransaction}
-                className="w-full py-3.5 bg-green-500 hover:bg-green-600 text-white font-black text-xs rounded-xl shadow-lg shadow-green-500/10 transition-all uppercase tracking-widest active:scale-95 text-center"
-              >
-                Transaksi Baru
-              </button>
+              <button type="button" onClick={handleNewTransaction} className="w-full py-3.5 bg-green-500 hover:bg-green-600 text-white font-black text-xs rounded-xl shadow-lg shadow-green-500/10 transition-all uppercase tracking-widest active:scale-95 text-center">Transaksi Baru</button>
             </div>
-
           </div>
         </div>
       )}
